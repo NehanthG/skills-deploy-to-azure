@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy-staging:
-    if: github.event.label.name == 'deploy-staging'
+    if: contains(github.event.pull_request.labels.*.name, 'stage')
     runs-on: ubuntu-latest
     environment: staging
 
